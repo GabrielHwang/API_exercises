@@ -15,3 +15,10 @@ if __name__ == '__main__':
    # print("https://space.bilibili.com/"+str(BvInfo['mid']))
     print("{}{}\n{}{}\n{}{}\n{}{}\n" \
         .format("用户名： " ,BvInfo['name'],"av: ",BvInfo['aid'],"主页","https://space.bilibili.com/"+str(BvInfo['mid']),"发布时间： ",time_pub))
+    
+    IP_Information=GetIP(Bvid)
+    print("---获取IP地址中---")
+    print("{}{}\n{}{}\n{}{}\n"\
+        .format('addr: ',IP_Information['addr'],\
+            'country: ',IP_Information['country'],\
+                'isp: ',IP_Information['isp']))

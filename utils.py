@@ -4,7 +4,6 @@ import re
 import urllib.request
 import hashlib
 
-#
 def GetUUID():
     s = input("---请粘贴Bilibili主页的网址：---\n（形如 https://space.bilibili.com/******\n")
     nums = re.findall(r'\d+', s)
@@ -25,7 +24,6 @@ def GetBvid():
     return BvidNum[0]
     
 def GetVideoInfo(Bvid):
-    
     VideoInfoAPI="http://api.bilibili.com/x/web-interface/view?bvid="+Bvid
     VideoInfoJson=json.loads(urllib.request.urlopen(VideoInfoAPI).read())
     biv=VideoInfoJson['data']['bvid']
@@ -35,4 +33,15 @@ def GetVideoInfo(Bvid):
     mid=VideoInfoJson['data']['owner']['mid']
     info={'aid':aid,'bivd':biv,'pubdate':pubdate,'name':name,'mid':mid}
     return info
+
+def GetIP(Bvid):
+    IPAPI="http://api.bilibili.com/x/web-interface/zone"
+    IPJson=json.loads(urllib.request.urlopen(IPAPI).read())
+    addr=IPJson['data']['addr']
+    country=IPJson['data']['country']
+    province=IPJson['data']['province']
+    isp=IPJson['data']['isp']
+    IPInfo={'addr':addr,'country':country,'province':province,'isp':isp}
+    return IPInfo
+    
     
