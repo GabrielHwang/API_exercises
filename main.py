@@ -27,3 +27,8 @@ if __name__ == '__main__':
     URL_addr=GetURL(Bvid,CID)
     print("---当前视频流为---")
     print(URL_addr)
+
+    dailyPost = GetDailyPost()
+    for item in dailyPost:
+        print(item['{}'].format(item))
+        

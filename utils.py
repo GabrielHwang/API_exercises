@@ -58,3 +58,35 @@ def GetURL(Bvid,CID):
     URL=URL_JSON['data']['durl'][0]['backup_url'][0]
     return URL
 
+def GetDailyPost():
+    post = {}
+    PostAPI = "http://api.bilibili.com/x/web-interface/online"
+    PostJson = json.loads(urllib.request.urlopen(PostAPI).read())
+    Donghua = PostJson['data']['region_count']['1']
+    Fanju = PostJson['data']['region_count']['13']
+    Guochuang = PostJson['data']['region_count']['167']
+    Yinyue = PostJson['data']['region_count']['3']
+    Wudao = PostJson['data']['region_count']['129']
+    Youxi = PostJson['data']['region_count']['4']
+    Danjiyouxi = PostJson['data']['region_count']['17']
+    Zhishi = PostJson['data']['region_count']['36']
+    Shuma = PostJson['data']['region_count']['188']
+    Shenghuo = PostJson['data']['region_count']['160']
+    Gaoxiao = PostJson['data']['region_count']['138']
+    Meishiquan = PostJson['data']['region_count']['76']
+    Dongwuquan = PostJson['data']['region_count']['75']
+    Guichu = PostJson['data']['region_count']['119']
+    Shishang = PostJson['data']['region_count']['155']
+    Zixun = PostJson['data']['region_count']['202']
+    Guanggao = PostJson['data']['region_count']['165']
+    Yule = PostJson['data']['region_count']['5']
+    Yingshi = PostJson['data']['region_count']['181']
+    Jilupian = PostJson['data']['region_count']['177']
+    Dianying = PostJson['data']['region_count']['23']
+    Dianshiju = PostJson['data']['region_count']['11']
+    post = {'donghua':Donghua,'Fanju':Fanju,'Guochuang':Guochuang,'Yinyue':Yinyue,\
+           'Wudao':Wudao,'Youxi':Youxi,'Danjiyouxi':Danjiyouxi,'Zhishi':Zhishi,'Shuma':Shuma,\
+            'Shenghuo':Shenghuo,'Gaoxiao':Gaoxiao,'Meishiquan':Meishiquan,'Dongwuquan':Dongwuquan,\
+            'Guichu':Guichu,'Shishang':Shishang,'Zixun':Zixun,'Guanggao':Guanggao,'Yule':Yule,\
+            'yingshi':Yingshi,'Jilupian':Jilupian,'Dianying':Dianying,'Dianshiju':Dianshiju}
+    return post
