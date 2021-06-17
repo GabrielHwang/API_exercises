@@ -30,5 +30,5 @@ if __name__ == '__main__':
 
     dailyPost = GetDailyPost()
     for item in dailyPost:
-        print(item['{}'].format(item))
+        pass
         
