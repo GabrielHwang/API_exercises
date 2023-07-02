@@ -1,7 +1,2 @@
-# API_exercises
-
-本仓库主要是对API基本使用方法的学习与介绍
-
-由小及大，最终汇总成一个整体的项目。
-
-【持续更新中】
+# API_exercise
+learn python 
